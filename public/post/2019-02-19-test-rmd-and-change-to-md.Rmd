@@ -5,7 +5,7 @@ date: '2019-02-19'
 categories:
   - R
 tags:
-  - Tips
+  - R
 slug: test-rmd-and-change-to-md
 ---
 

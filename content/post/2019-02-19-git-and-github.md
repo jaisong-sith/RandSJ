@@ -1,16 +1,15 @@
 ---
-title: Git and Github
-author: S Jaisong
+title: "Git and Github"
+author: "S Jaisong"
 date: '2019-02-19'
-slug: git-and-github
-categories:
-  - R
-tags:
-  - Github
-subtitle: ''
 description: ''
 image: ''
+slug: git-and-github
+subtitle: ''
+tags: Github
+categories: R
 ---
+
 <p align = "center">
 <img src = "http://jmcglone.com/img/guides/git-basics.png" width = "800"/>
 <p/>
