@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Find and Replace</title>
+      <link>/post/test-rmd-and-change-to-md/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/test-rmd-and-change-to-md/</guid>
+      <description>คือ เมื่อวาน มีน้องในเลป เข้ามาถามเกี่ยวกับ การใช้ อาร์ เพื่อ จะเอาไปใช้กับงานวิจัยของเขา แล้ว มันมี Function นึงใน excel ที่ ค่อนข้างจะมีประโยชน์ และก็สามารถทำในอาร์ได้ แต่ น้องคนนี้ก็ยืนยันจะทำใน excel อยู่ดี คือ ผมเองก็ไม่เคยจะได้ศึกษาเท่าไหร่ ในเรื่อง ที่ว่า จะ หา function อะไร ใน อาร์ ที่ทำงานคล้ายๆ กับ Find and Replace ผมเอง ก็ลอง หา หา ไป เรื่อย แล้ว ก็แก้ กัน ไป ผมเลย พบ function recode จาก car package
+library(car) ## Loading required package: carData ผมเอาตัวอย่างที่เป็น data frame มานะครับ เพระาว่า ปกติ เวลาเราทำงาน ข้อมูลเรามักจะเป็น data frame
+ถ้าเราต้องการเปลี่ยนแค่ column เดียว x &amp;lt;- data.</description>
+    </item>
+    
+    <item>
       <title>Git and Github</title>
       <link>/post/git-and-github/</link>
       <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>

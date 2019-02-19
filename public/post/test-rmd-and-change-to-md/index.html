@@ -18,9 +18,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Find and Replace" />
+    <meta property="og:title" content="Find and Replace" />
+    <meta property="twitter:title" content="Find and Replace" />
     
 
     
@@ -37,9 +37,9 @@
     <meta name="keyword"  content="Sith, Jaisong, R programming, Statistics, Agriculture, Sith&#39;s blog">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>| SJaisong&#39;s Blog</title>
+    <title>Find and Replace-| SJaisong&#39;s Blog</title>
 
-    <link rel="canonical" href="/top/about/">
+    <link rel="canonical" href="/post/test-rmd-and-change-to-md/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -144,14 +144,35 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/IMG_1902.JPG')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/IMG_1902.JPG')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>R and SJ </h1>
-                    
-		    <span class="subheading">Nobody，but You</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tips" title="Tips">
+                            Tips
+                        </a>
+                        
+                    </div>
+                    <h1>Find and Replace</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			    S Jaisong
+			 
+			on 
+			Tuesday, February 19, 2019
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -171,15 +192,69 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                
+                
+                
 
-<h1 id="about-me">About Me</h1>
 
-<h2 id="สว-สด-sawasdee-sàwàtdiː">สวัสดี Sawasdee [sàwàtdiː]</h2>
+<p>คือ เมื่อวาน มีน้องในเลป เข้ามาถามเกี่ยวกับ การใช้ อาร์ เพื่อ จะเอาไปใช้กับงานวิจัยของเขา แล้ว มันมี Function นึงใน excel ที่ ค่อนข้างจะมีประโยชน์ และก็สามารถทำในอาร์ได้ แต่ น้องคนนี้ก็ยืนยันจะทำใน excel อยู่ดี คือ ผมเองก็ไม่เคยจะได้ศึกษาเท่าไหร่ ในเรื่อง ที่ว่า จะ หา function อะไร ใน อาร์ ที่ทำงานคล้ายๆ กับ Find and Replace ผมเอง ก็ลอง หา หา ไป เรื่อย แล้ว ก็แก้ กัน ไป ผมเลย พบ function <code>recode</code> จาก <code>car</code> package</p>
+<pre class="r"><code>library(car)</code></pre>
+<pre><code>## Loading required package: carData</code></pre>
+<p>ผมเอาตัวอย่างที่เป็น data frame มานะครับ เพระาว่า ปกติ เวลาเราทำงาน ข้อมูลเรามักจะเป็น data frame</p>
+<div id="-column-" class="section level3">
+<h3>ถ้าเราต้องการเปลี่ยนแค่ column เดียว</h3>
+<pre class="r"><code>x &lt;- data.frame(col1 = c(1, 1, 2, 2), col2 = c(&quot;x&quot;, &quot;x&quot;, &quot;y&quot;, &quot;y&quot;))
+x</code></pre>
+<pre><code>##   col1 col2
+## 1    1    x
+## 2    1    x
+## 3    2    y
+## 4    2    y</code></pre>
+<pre class="r"><code>x$col1 &lt;- recode(x$col1, &quot;1 = 5 ; 2 = 10 &quot;)
+x$col2 &lt;- recode(x$col2, &quot;&#39;x&#39; = 1; &#39;y&#39; = 2&quot;)
+x</code></pre>
+<pre><code>##   col1 col2
+## 1    5    1
+## 2    5    1
+## 3   10    2
+## 4   10    2</code></pre>
+<p>บางครั้ง ข้อมมูลที่ บันทึกไว้ เรา code เป็น ตัวอักษร ทั้งหมด ทุก column ของ data frame</p>
+<pre class="r"><code>library(car)
+y &lt;- data.frame(col1 = c(&quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;), col2 = c(&quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;))
+y</code></pre>
+<pre><code>##   col1 col2
+## 1    M    F
+## 2    M    F
+## 3    F    M
+## 4    F    M</code></pre>
+<pre class="r"><code>for (i in 1:ncol(y)) {
+  y[, i] &lt;- recode(y[, i], &quot;&#39;M&#39; = 1 ; &#39;F&#39; = 2&quot;)
+}
+y</code></pre>
+<pre><code>##   col1 col2
+## 1    1    2
+## 2    1    2
+## 3    2    1
+## 4    2    1</code></pre>
+</div>
 
-<p>ดีใจที่คุณได้เข้ามาอ่านบล้อกของผมครับ ผมเป็นคนไทยคนหนึ่งที่ใช้โปรแกรมอาร์ทำงาน ซึ่งผมคิดว่าโปรแกรมอาร์เป็นโปรแกรมที่มีประโยชน์มากๆ แต่คนไทยหลายๆ คน ยัง ไม่ค่อยได้ใช้ บ้างเพราะว่า ใช้ยากบ้าง เข้าใจยากบ้างเอย อันที่จริงแล้ว ผมอยากให้คุณได้ลองเปิดใจ เรียนรู้ และลองหัดใช้มันดู แล้วคุณจะรู้ว่า โปรแกรมอาร์ไม่ได้ยากอย่างที่คุณคิดเลย</p>
 
-<p>ผมสัญญาครับว่า จะพยายามอัพ บทความ เรื่อยๆ</p>
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/git-and-github/" data-toggle="tooltip" data-placement="top" title="Git and Github">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
 
                 
 <div id="disqus-comment"></div>
@@ -277,7 +352,7 @@
                     
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; R and SJ , 0001
+                    Copyright &copy; R and SJ , 2019
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe

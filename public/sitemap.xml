@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/test-rmd-and-change-to-md/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/git-and-github/</loc>
     <lastmod>2019-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -47,6 +52,12 @@
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tips/</loc>
     <lastmod>2019-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

@@ -1,0 +1,53 @@
+---
+title: Find and Replace
+author: S Jaisong
+date: '2019-02-19'
+categories:
+  - R
+tags:
+  - Tips
+slug: test-rmd-and-change-to-md
+---
+
+
+
+<p>คือ เมื่อวาน มีน้องในเลป เข้ามาถามเกี่ยวกับ การใช้ อาร์ เพื่อ จะเอาไปใช้กับงานวิจัยของเขา แล้ว มันมี Function นึงใน excel ที่ ค่อนข้างจะมีประโยชน์ และก็สามารถทำในอาร์ได้ แต่ น้องคนนี้ก็ยืนยันจะทำใน excel อยู่ดี คือ ผมเองก็ไม่เคยจะได้ศึกษาเท่าไหร่ ในเรื่อง ที่ว่า จะ หา function อะไร ใน อาร์ ที่ทำงานคล้ายๆ กับ Find and Replace ผมเอง ก็ลอง หา หา ไป เรื่อย แล้ว ก็แก้ กัน ไป ผมเลย พบ function <code>recode</code> จาก <code>car</code> package</p>
+<pre class="r"><code>library(car)</code></pre>
+<pre><code>## Loading required package: carData</code></pre>
+<p>ผมเอาตัวอย่างที่เป็น data frame มานะครับ เพระาว่า ปกติ เวลาเราทำงาน ข้อมูลเรามักจะเป็น data frame</p>
+<div id="-column-" class="section level3">
+<h3>ถ้าเราต้องการเปลี่ยนแค่ column เดียว</h3>
+<pre class="r"><code>x &lt;- data.frame(col1 = c(1, 1, 2, 2), col2 = c(&quot;x&quot;, &quot;x&quot;, &quot;y&quot;, &quot;y&quot;))
+x</code></pre>
+<pre><code>##   col1 col2
+## 1    1    x
+## 2    1    x
+## 3    2    y
+## 4    2    y</code></pre>
+<pre class="r"><code>x$col1 &lt;- recode(x$col1, &quot;1 = 5 ; 2 = 10 &quot;)
+x$col2 &lt;- recode(x$col2, &quot;&#39;x&#39; = 1; &#39;y&#39; = 2&quot;)
+x</code></pre>
+<pre><code>##   col1 col2
+## 1    5    1
+## 2    5    1
+## 3   10    2
+## 4   10    2</code></pre>
+<p>บางครั้ง ข้อมมูลที่ บันทึกไว้ เรา code เป็น ตัวอักษร ทั้งหมด ทุก column ของ data frame</p>
+<pre class="r"><code>library(car)
+y &lt;- data.frame(col1 = c(&quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;), col2 = c(&quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;))
+y</code></pre>
+<pre><code>##   col1 col2
+## 1    M    F
+## 2    M    F
+## 3    F    M
+## 4    F    M</code></pre>
+<pre class="r"><code>for (i in 1:ncol(y)) {
+  y[, i] &lt;- recode(y[, i], &quot;&#39;M&#39; = 1 ; &#39;F&#39; = 2&quot;)
+}
+y</code></pre>
+<pre><code>##   col1 col2
+## 1    1    2
+## 2    1    2
+## 3    2    1
+## 4    2    1</code></pre>
+</div>
