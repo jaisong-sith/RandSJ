@@ -6,7 +6,8 @@ description: ''
 image: ''
 slug: git-and-github
 subtitle: ''
-tags: Github
+tags: 
+- 'Github'
 categories: R
 ---
 

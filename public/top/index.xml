@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tops on R and SJ</title>
+    <link>/top/</link>
+    <description>Recent content in Tops on R and SJ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/top/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/top/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/top/about/</guid>
+      <description>About Me สวัสดี Sawasdee [sàwàtdiː] ดีใจที่คุณได้เข้ามาอ่านบล้อกของผมครับ ผมเป็นคนไทยคนหนึ่งที่ใช้โปรแกรมอาร์ทำงาน ซึ่งผมคิดว่าโปรแกรมอาร์เป็นโปรแกรมที่มีประโยชน์มากๆ แต่คนไทยหลายๆ คน ยัง ไม่ค่อยได้ใช้ บ้างเพราะว่า ใช้ยากบ้าง เข้าใจยากบ้างเอย อันที่จริงแล้ว ผมอยากให้คุณได้ลองเปิดใจ เรียนรู้ และลองหัดใช้มันดู แล้วคุณจะรู้ว่า โปรแกรมอาร์ไม่ได้ยากอย่างที่คุณคิดเลย
+ผมสัญญาครับว่า จะพยายามอัพ บทความ เรื่อยๆ</description>
+    </item>
+    
+  </channel>
+</rss>
