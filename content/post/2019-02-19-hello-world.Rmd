@@ -5,11 +5,11 @@ date: '2019-02-19'
 slug: hello-world
 categories:
   - R
-tags: 
+tags:
  - R
 subtitle: ''
 description: ''
-image: ''
+image: 'https://forwards.github.io/images/blog/users-relationship-with-r/banner.png'
 ---
 
 
